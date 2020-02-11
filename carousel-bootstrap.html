@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  .carousel-indicators {
+    bottom: -70px;
+  }
+  .carousel-indicators li{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color:#666;
+    float:left;
+    cursor: pointer;
+    margin-left: 50px;
+  }
+  
+  .carousel-indicators .active{
+    background-color: blue;
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    .carousel-indicators {
+                display: block;
+            }
+        }
+  @media only screen and (min-width: 600px) {
+      .carousel-indicators {
+          display: none
+      }
+  }
+  </style>
+
+</head>
+<body>
+
+<div id="demo" class="conteudo carousel slide" data-ride="carousel">
+
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="linha carousel-inner">
+        <div class="lista carousel-item active">
+          <img src="https://i.imgur.com/515mAcB.png" class="img-fluid">
+          <h6><strong>PARCELE FÁCIL</strong></h6>
+          <p>Conheça os seguros exclusivos oferecidos pelo seu Cartão Carrefour e proteja o que é importante para você.</p>
+        </div>
+        <div class="lista carousel-item">
+            <img src="https://i.imgur.com/DSF5XLT.png" class="img-fluid">
+            <h6><strong>PARCELE FÁCIL</strong></h6>
+            <p>Conheça os seguros exclusivos oferecidos pelo seu Cartão Carrefour e proteja o que é importante para você.</p>
+        </div>
+        <div class="lista carousel-item">
+            <img src="https://i.imgur.com/hAsD4KU.png" class="img-fluid">
+            <h6><strong>PARCELE FÁCIL</strong></h6>
+            <p>Conheça os seguros exclusivos oferecidos pelo seu Cartão Carrefour e proteja o que é importante para você.</p>
+        </div>
+    </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+<script>
+    $(document).ready(function() {
+    
+if ( $(window).width() > 600 ) {
+  $('.conteudo').removeClass('carousel').removeClass('slide').addClass('container');
+  $('.linha').removeClass('carousel-inner').addClass('row');
+  $('.lista').removeClass('carousel-item').addClass('col-sm-4');
+}
+});
+
+$(window).resize(function() {
+    
+    if ( $(window).width() < 600 ) {
+      $('.conteudo').addClass('carousel').addClass('slide').removeClass('container');
+      $('.linha').addClass('carousel-inner').removeClass('row');
+      $('.lista').addClass('carousel-item').removeClass('col-sm-4'); 
+    
+    } else {
+      $('.conteudo').removeClass('carousel').removeClass('slide').addClass('container');
+      $('.linha').removeClass('carousel-inner').addClass('row');
+      $('.lista').removeClass('carousel-item').addClass('col-sm-4'); 
+    };
+    })
+</script>
+
+</body>
+</html>
